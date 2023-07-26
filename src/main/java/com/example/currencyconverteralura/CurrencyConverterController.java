@@ -7,9 +7,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
