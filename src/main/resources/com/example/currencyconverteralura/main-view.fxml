@@ -24,12 +24,13 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <TextField layoutX="229.0" layoutY="233.0" promptText="Enter quantity">
+        <TextField fx:id="currencyInput" layoutX="229.0" layoutY="233.0" promptText="Ex: 200">
             <effect>
                 <Blend />
             </effect>
         </TextField>
       <Text fx:id="haveError" fill="RED" layoutX="118.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="wantError" fill="RED" layoutX="428.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="currencyInputError" fill="RED" layoutX="266.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" />
     </children>
 </AnchorPane>

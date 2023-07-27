@@ -6,13 +6,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CurrencyConverterController implements Initializable {
     @FXML
-    private Label welcomeText = new Label("Hello?");
+    private Label welcomeText = new Label();
 
     @FXML
     public ChoiceBox<String> haveChoiceBox = new ChoiceBox<String>();
@@ -24,6 +25,12 @@ public class CurrencyConverterController implements Initializable {
     public Text wantError = new Text();
     @FXML
     public ChoiceBox<String> wantChoiceBox = new ChoiceBox<String>();
+
+    @FXML
+    public TextField currencyInput = new TextField();
+
+    @FXML
+    public Text currencyInputError = new Text();
 
     private String[] availableCurrencies = {"COP", "USD", "BRL", "EUR", "CAD", "AUD", "MXN"};
 
@@ -47,6 +54,13 @@ public class CurrencyConverterController implements Initializable {
     public boolean validateInput() {
         String haveVal = haveChoiceBox.getValue();
         String wantVal = wantChoiceBox.getValue();
+        boolean isInputEmpty = currencyInput.getText().isEmpty();
+
+        if (isInputEmpty) {
+            currencyInputError.setText("Enter quantity");
+        } else {
+            currencyInputError.setText("");
+        }
 
         if (haveVal == null) {
             haveError.setText("Select option");
@@ -59,7 +73,7 @@ public class CurrencyConverterController implements Initializable {
         } else {
             wantError.setText("");
         }
-        if (haveVal == null || wantVal == null) {
+        if (haveVal == null || wantVal == null || isInputEmpty == true) {
             return false;
         }
 
