@@ -12,7 +12,7 @@ public class CurrencyConverter extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(CurrencyConverter.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Alura Currency Converter");
         stage.setScene(scene);
         stage.show();
     }
