@@ -49,7 +49,6 @@ public class ConverterResultController {
     }
 
     public void setResultText(String haveCurrency, String wantCurrency, String amount) throws IOException {
-        resultText.setText("Wow, result");
         JsonObject convertResult = makeConvertRequest(haveCurrency, wantCurrency, amount);
         resultText.setText("$ " + convertResult.get("new_amount"));
     }
