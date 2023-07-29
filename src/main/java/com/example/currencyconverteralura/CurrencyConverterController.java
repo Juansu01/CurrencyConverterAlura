@@ -46,7 +46,7 @@ public class CurrencyConverterController implements Initializable {
         String wantValue = wantChoiceBox.getValue();
         boolean isValid = validateInput();
         if (isValid) {
-            System.out.println("The user wants:" + haveValue + " " + wantValue);
+            System.out.println("The user wants:" + currencyInput.getText() + haveValue + " converted to -> " + wantValue);
         }
 
     }
@@ -54,29 +54,43 @@ public class CurrencyConverterController implements Initializable {
     public boolean validateInput() {
         String haveVal = haveChoiceBox.getValue();
         String wantVal = wantChoiceBox.getValue();
-        boolean isInputEmpty = currencyInput.getText().isEmpty();
+        String currencyInputVal = currencyInput.getText();
 
-        if (isInputEmpty) {
+        boolean isHaveValValid = false;
+        boolean isWantValValid = false;
+        boolean isCurrencyInputValid = false;
+
+        if (currencyInputVal.isEmpty()) {
             currencyInputError.setText("Enter quantity");
+        } else if (!isNumeric(currencyInput.getText())) {
+            currencyInputError.setText("Enter only numbers");
         } else {
             currencyInputError.setText("");
+            isCurrencyInputValid = true;
         }
 
         if (haveVal == null) {
             haveError.setText("Select option");
         } else {
             haveError.setText("");
+            isHaveValValid = true;
         }
 
         if (wantVal == null) {
             wantError.setText("Select option");
         } else {
             wantError.setText("");
+            isWantValValid = true;
         }
-        if (haveVal == null || wantVal == null || isInputEmpty == true) {
+        return isCurrencyInputValid && isHaveValValid && isWantValValid;
+    }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
             return false;
         }
-
-        return true;
     }
 }
