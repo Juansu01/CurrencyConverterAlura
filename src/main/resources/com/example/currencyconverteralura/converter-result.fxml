@@ -13,7 +13,7 @@
                 <Font size="48.0" />
             </font>
         </Label>
-        <Text fx:id="resultText" fill="#129e05" fontSmoothingType="LCD" layoutX="201.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 30.000.000" textOrigin="CENTER">
+        <Text fx:id="resultText" fill="#129e05" fontSmoothingType="LCD" layoutX="201.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 30.000.000" textAlignment="CENTER" textOrigin="CENTER">
             <font>
                 <Font size="36.0" />
             </font>
