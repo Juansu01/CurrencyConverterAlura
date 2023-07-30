@@ -30,7 +30,9 @@ public class HomeController implements Initializable {
     private final FXMLLoader currencyConverter = new FXMLLoader(getClass().getResource("currency-converter-prompt.fxml"));
 
     private Stage stage;
+
     private Scene scene;
+
     private Parent root;
 
     @Override
