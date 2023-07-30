@@ -4,9 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,9 +25,13 @@ public class HomeController implements Initializable {
     @FXML
     public Text converterChoiceError = new Text();
 
-    private final FXMLLoader weightConverter = new FXMLLoader(getClass().getResource("weight-currency-converter-prompt.fxml"));
+    private final FXMLLoader weightConverter = new FXMLLoader(getClass().getResource("weight-converter-prompt.fxml"));
 
-    private final FXMLLoader currencyConverter = new FXMLLoader(getClass().getResource("currency-converter-result.fxml"));
+    private final FXMLLoader currencyConverter = new FXMLLoader(getClass().getResource("currency-converter-prompt.fxml"));
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -30,10 +39,14 @@ public class HomeController implements Initializable {
         this.setConverterChoiceBox();
     }
 
-    public void onHomeSubmit(ActionEvent event) {
+    public void onHomeSubmit(ActionEvent event) throws IOException {
         boolean isChoiceValid = this.validateChoice();
         if (isChoiceValid) {
-            System.out.println("Valid choice.");
+            if (converterChoiceBox.getValue() == "Currency") {
+                this.displayCurrencyConverter(event);
+            } else {
+                this.displayWeightConverter(event);
+            }
         }
     }
 
@@ -50,5 +63,21 @@ public class HomeController implements Initializable {
         }
 
         return !isChoiceNull;
+    }
+
+    public void displayCurrencyConverter(ActionEvent event) throws IOException {
+        root = this.currencyConverter.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void displayWeightConverter(ActionEvent event) throws IOException {
+        root = this.weightConverter.load();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
