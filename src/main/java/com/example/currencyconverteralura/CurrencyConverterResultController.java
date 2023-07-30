@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class ConverterResultController {
+public class CurrencyConverterResultController {
 
     @FXML
     private Label resultLabel = new Label();
@@ -28,20 +28,22 @@ public class ConverterResultController {
 
     private FXMLLoader converterLoader = new FXMLLoader(getClass().getResource("currency-converter-prompt.fxml"));
 
+    private FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("alura-converter-home.fxml"));
+
     private Stage stage;
 
     private Scene scene;
 
     private Parent root;
 
-    public void goHome(ActionEvent event) {
-        System.out.println("Going Home");
+    public void goHome(ActionEvent event) throws IOException {
+        this.root = this.homeLoader.load();
+        this.displayWindow(event);
     }
 
     public void goToConverter(ActionEvent event) throws IOException {
         this.root = this.converterLoader.load();
         this.displayWindow(event);
-        System.out.println("Going back to converter");
     }
 
     public void setResultLabel(String haveCurrency, String wantCurrency) {
