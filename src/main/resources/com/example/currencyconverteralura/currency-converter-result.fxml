@@ -6,14 +6,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.currencyconverteralura.ConverterResultController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.currencyconverteralura.CurrencyConverterResultController">
     <children>
         <Label fx:id="resultLabel" alignment="CENTER" layoutX="111.0" layoutY="42.0" text="From USD to COP">
             <font>
                 <Font size="48.0" />
             </font>
         </Label>
-        <Text fx:id="resultText" fill="#129e05" fontSmoothingType="LCD" layoutX="201.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 30.000.000" textAlignment="CENTER" textOrigin="CENTER">
+        <Text fx:id="resultText" fill="#129e05" fontSmoothingType="LCD" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$ 30.000.000" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="600.0">
             <font>
                 <Font size="36.0" />
             </font>
