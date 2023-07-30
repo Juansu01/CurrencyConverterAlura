@@ -107,7 +107,7 @@ public class CurrencyConverterController implements Initializable {
 
     public void setResultValues() throws IOException {
         root = this.resultLoader.load();
-        ConverterResultController resultController = this.resultLoader.getController();
+        CurrencyConverterResultController resultController = this.resultLoader.getController();
         resultController.setResultLabel(haveChoiceBox.getValue(), wantChoiceBox.getValue());
         resultController.setResultText(haveChoiceBox.getValue(), wantChoiceBox.getValue(), currencyInput.getText());
 
