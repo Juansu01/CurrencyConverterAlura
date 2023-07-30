@@ -38,7 +38,7 @@ public class CurrencyConverterController implements Initializable {
     @FXML
     public Text currencyInputError = new Text();
 
-    private FXMLLoader resultLoader = new FXMLLoader(getClass().getResource("converter-result.fxml"));
+    private FXMLLoader resultLoader = new FXMLLoader(getClass().getResource("currency-converter-result.fxml"));
 
     private Stage stage;
     private Scene scene;

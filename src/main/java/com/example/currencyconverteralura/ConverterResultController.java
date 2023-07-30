@@ -26,7 +26,7 @@ public class ConverterResultController {
     @FXML
     private Text resultText = new Text();
 
-    private FXMLLoader converterLoader = new FXMLLoader(getClass().getResource("converter-prompt.fxml"));
+    private FXMLLoader converterLoader = new FXMLLoader(getClass().getResource("currency-converter-prompt.fxml"));
 
     private Stage stage;
 

@@ -2,6 +2,7 @@ package com.example.currencyconverteralura;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
@@ -18,6 +19,10 @@ public class HomeController implements Initializable {
 
     @FXML
     public Text converterChoiceError = new Text();
+
+    private final FXMLLoader weightConverter = new FXMLLoader(getClass().getResource("weight-currency-converter-prompt.fxml"));
+
+    private final FXMLLoader currencyConverter = new FXMLLoader(getClass().getResource("currency-converter-result.fxml"));
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

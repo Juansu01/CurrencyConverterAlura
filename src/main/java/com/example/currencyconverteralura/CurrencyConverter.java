@@ -11,7 +11,7 @@ import java.io.IOException;
 public class CurrencyConverter extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CurrencyConverter.class.getResource("converter-prompt.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CurrencyConverter.class.getResource("currency-converter-prompt.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Alura Currency Converter");
         Image icon = new Image("icon.png");
