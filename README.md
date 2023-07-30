@@ -17,3 +17,20 @@ Currency and unit converter for Alura's backend challenge.
 
 ### Home
 
+<img src="./readme_media/home-view.png">
+
+### Currency Converter
+
+<img src="./readme_media/currency-prompt.png">
+<br>
+<img src="./readme_media/currency-converter-result.png">
+
+### Weight Converter
+
+<img src="./readme_media/weight-converter-prompt.png">
+<br>
+<img src="./readme_media/weight-converter-result.png">
+
+### Input Validation
+
+Messages will be displayed under TextInput fields when required.
